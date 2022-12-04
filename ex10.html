@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="receipt"></div>
+  <script>
+    let cartArr = [{ name: 'Apple', price: 4, quantity: 3 },
+    { name: 'orajf', price: 6, quantity: 2 },
+    { name: 'asd', price: 2, quantity: 9 },
+    { name: 'fdf', price: 8, quantity: 5 },
+    { name: 'ere', price: 6, quantity: 7 }]
+
+    function cartTotal(cartTotal) {
+      let total = 0;
+      cartArr.forEach(element => {
+        total += element.price * element.quantity;
+      });
+      console.log(total);
+    }
+
+    function displayReceipt(cartTotal) {
+      let total = 0;
+      let thediv=document.getElementById('receipt');
+      thediv.innerHTML='';
+      cartArr.forEach(element => {
+        let receipt_item = document.createElement('div');
+        receipt_item.innerHTML=element.name+" "+"$"+element.price+"*"+element.quantity+"=$"+(element.price*element.quantity);
+        thediv.appendChild(receipt_item);
+        total += element.price * element.quantity;
+      });
+      let receipt_item = document.createElement('div');
+      receipt_item.innerHTML="Cart total = $"+total;
+      thediv.appendChild(receipt_item);
+    }
+
+  </script>
+</body>
+
+</html>

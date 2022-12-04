@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <script>
+        let obj = {name: 'Apple',
+                   price: 4
+                };
+        //console.log(Object.keys({Apple:3, Orange:2, Egg:4}));
+        
+        let total=0;
+        function createCart (inp) {
+            
+            let arr = Object.keys(inp);
+            arr.forEach(element => {
+                let d = document.createElement('div');
+                let price = inp[element];
+                d.innerHTML = element+' '+'$'+price;
+                let button = document.createElement('button');
+                button.id = new Date().getTime();
+                button.innerHTML = "Add";
+
+                d.appendChild(button);
+                document.getElementById('body').appendChild(d);
+
+                button.onclick = function () {
+                    total+=price;
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
