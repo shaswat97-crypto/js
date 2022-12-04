@@ -37,6 +37,21 @@
       }
       return true;
     }));
+
+    //q3
+    console.log("q3");
+    let arr3 = [1, 5, -2, 4, 3, 5, 0];
+    arr3.reverse();
+    let c=2;
+    console.log(arr3);
+    let ans=arr3.filter(function(el){
+      if(el>0 && c>0){
+        c--;
+        return false;
+      }
+      return true;
+    });
+    console.log(ans.reverse());
   </script>
 </body>
 
