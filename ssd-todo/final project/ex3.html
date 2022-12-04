@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //q1
+    let max=-99999;
+    let min = 9999;
+    let gz = 9999;
+    let arr = [1, 5, -2, 4, 3, 5, 0];
+    arr.forEach(el => {
+      if (el>max) max=el;
+      if (el<min) min=el;
+      if (gz !== 0) {
+        if (el === 0) gz=0;
+        else if (el>0 && el<gz) gz=el;
+      }
+    });
+    console.log(max+' '+min+' '+gz);
+
+    //q2
+    let count =2;
+    let arr2 = ['cherry', 'apple', 'orange', 'apple', 'banana', 'apple'];
+    console.log(arr2);
+    console.log(arr2.filter(function(el){
+      if (count > 0 && el === 'apple')
+      {
+        count--;
+        return false;
+      }
+      return true;
+    }));
+  </script>
+</body>
+
+</html>
