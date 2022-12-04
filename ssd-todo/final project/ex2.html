@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let s = 'sdfs';
+    function name(params) {
+      return params.toUpperCase();
+    }
+    console.log(name(s));
+
+    //practice with array.filter
+    let temp = [23, 53, 53, 22, 11, 23, 82, 32, 55];
+    console.log(temp);
+    console.log(temp.filter(function (params) {
+      return params > 25;
+    }));
+
+    //practice filter with obj
+    let foodArray = [{
+      name : 'Apple',
+      color : 'red'
+    }, {
+      name : 'Egg',
+      color : 'white'
+    }, {
+      name : 'Orange',
+      color : 'orange'
+    }, {
+      name : 'Wine',
+      color : 'red'
+    }];
+    console.log(foodArray);
+    console.log(foodArray.filter(function(obj){return obj.color !== 'red'}));
+  </script>
+</body>
+
+</html>
